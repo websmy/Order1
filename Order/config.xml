@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+
+  <add key="JiaBanLessThan5RepairQ" value="0.8"></add>
+  <add key="JiaBanGreaterThan5RepairQ" value="0.9"></add>
+
+  <add key="JiaBanLessThan5RepairP" vaule="0.7"></add>
+  <add key="JiaBanGreaterThan5RepairP" value="0.8"></add>
+
+
+  <add key="B3DianJiLessThan5RepairQ" value="0.8"></add>
+  <add key="B3DianJiGreaterThan5RepairQ" value="0.9"></add>
+
+  <add key="B3DianJiLessThan5RepairP" vaule="0.7"></add>
+  <add key="B3DianJiGreaterThan5RepairP" value="0.8"></add>
+</configuration>
