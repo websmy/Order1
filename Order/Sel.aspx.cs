@@ -19,7 +19,7 @@ namespace Order
             }
         }
 
-        protected void Button3_Click(object sender, EventArgs e)
+        protected void Button3_Click(object sender, EventArgs e) 
         {
             this.fanListView.DataSource = null;
             this.fanProp.DataSource = null;
