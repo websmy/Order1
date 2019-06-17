@@ -44,7 +44,7 @@
 
                                             <f:GroupPanel ID="GroupPanel1" runat="server" EnableCollapse="false" Title="风量信息">
                                                 <Items>
-                                                    <f:NumberBox Label="风量" ID="txtAirFlow" runat="server" Required="true" Text="100000" ShowRedStar="true" LabelWidth="70px" />
+                                                    <f:NumberBox Label="风量" ID="txtAirFlow" runat="server" Required="true" Text="200000" ShowRedStar="true" LabelWidth="70px" />
 
                                                     <f:DropDownList ID="comboBox1" runat="server" Label="风量单位" LabelWidth="70px">
                                                         <f:ListItem Text="m³/s" Value="m³/s" />
@@ -62,7 +62,7 @@
                                                         <f:RadioItem Text="静压" Value="jingya" Selected="true" />
                                                         <f:RadioItem Text="全压" Value="quanya" />
                                                     </f:RadioButtonList>
-                                                    <f:NumberBox Label="压力大小" LabelWidth="80px" ID="txtStaticPres" Required="true" ShowRedStar="true" Text="666" runat="server" />
+                                                    <f:NumberBox Label="压力大小" LabelWidth="80px" ID="txtStaticPres" Required="true" ShowRedStar="true" Text="230" runat="server" />
                                                     <f:DropDownList ID="comboBox2" runat="server" Label="压力单位" LabelWidth="80px">
                                                         <f:ListItem Text="Pa" Value="Pa" Selected="true" />
                                                         <f:ListItem Text="mm Hg" Value="mm Hg" />
@@ -79,9 +79,9 @@
 
                                             <f:GroupPanel ID="GroupPanel3" runat="server" EnableCollapse="false" Title="风压误差设置" Layout="Column">
                                                 <Items>
-                                                    <f:NumberBox ShowLabel="false" ID="nbxStart" Text="0.95" Required="true" ShowRedStar="true"   runat="server" MinValue="0" MaxValue="1" Width="80" />
+                                                    <f:NumberBox ShowLabel="false" ID="nbxStart" Text="0.5" Required="true" ShowRedStar="true"   runat="server" MinValue="0" MaxValue="1" Width="80" />
                                                     <f:Label ID="Label1" runat="server" ShowLabel="false" Text="~" Margin="0 10 0 10"></f:Label>
-                                                    <f:NumberBox ShowLabel="false" ID="nbxEnd" Text="1.05" Required="true" ShowRedStar="true" runat="server" MinValue="1" MaxValue="10" Width="80" />
+                                                    <f:NumberBox ShowLabel="false" ID="nbxEnd" Text="1.5" Required="true" ShowRedStar="true" runat="server" MinValue="1" MaxValue="10" Width="80" />
 
                                                 </Items>
                                             </f:GroupPanel>

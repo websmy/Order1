@@ -273,10 +273,10 @@ namespace Order
 
                     }
 
-                    if (!CheckDianYuanPinLu(fanClass))
-                    {
-                        continue;
-                    }
+                    //if (!CheckDianYuanPinLu(fanClass))
+                    //{
+                    //    continue;
+                    //}
                     //if (!CheckDianYa(fanClass))
                     //{
                     //    continue;

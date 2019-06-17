@@ -75,7 +75,14 @@
 
                  xAxis: [
                      {
-                         name: '风量',
+                         name: '风量 Q (m3/h)',
+                         nameTextStyle: {
+                             color: "#657c97",
+                             padding: [20, 0, 0, 20],
+                             fontFamily: "#Arial",
+                             fontSize: 12
+                         },
+
                          type: 'value',
                          nameLocation: 'middle',
 
@@ -84,10 +91,11 @@
 
                  yAxis: [
                      {
-                         name: '压力',
+                         name: '压力 P(Pa)',
+                         padding: [0, 400, 0, 0],
                          position: 'left',
                          type: 'value',
-                         nameLocation: 'middle'
+                         nameLocation: 'end'
                      },
                      {
                          show: false,
@@ -109,9 +117,9 @@
                      }
                      ,
                      {
-                         name: '功率',
+                         name: '轴功率N (W)',
                          position: 'right',
-                         nameLocation: 'middle',
+                         nameLocation: 'end',
                          type: 'value'
                          //inverse: true
                      },
@@ -216,7 +224,7 @@
                          var sdataW = [];
                          var sdataP = [];
 
-                         for (var i = 0; i < rtdata.length - 2; i++) {
+                         for (var i = 0; i < rtdata.length - 1; i++) {
                              var sdataArray = [];
                              var sdataArrayW = [];
                              var sdataArrayP = [];
