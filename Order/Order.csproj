@@ -181,7 +181,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
-    <Content Include="EChart.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -199,9 +198,12 @@
     <Content Include="config\quanxian.config" />
     <Content Include="config\set.config" />
     <Content Include="GetValue.ashx" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
     <None Include="Properties\PublishProfiles\Fan.pubxml" />
     <None Include="Properties\PublishProfiles\tpf.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="res\css\default.css" />
     <Content Include="res\js\echarts.js" />
     <Content Include="res\js\echarts.min.js" />
     <Content Include="res\js\jquery.js" />
@@ -361,15 +363,11 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Config.cs" />
-    <Compile Include="Convert.cs" />
-    <Compile Include="EChart.aspx.cs">
-      <DependentUpon>EChart.aspx</DependentUpon>
+    <Compile Include="Class\PageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EChart.aspx.designer.cs">
-      <DependentUpon>EChart.aspx</DependentUpon>
-    </Compile>
+    <Compile Include="Config.cs" />
+    <Compile Include="Convert.cs" />
     <Compile Include="ElectricMachinery.cs" />
     <Compile Include="FanClass.cs" />
     <Compile Include="GetValue.ashx.cs">
@@ -426,6 +424,20 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -28,25 +28,16 @@ namespace Order {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.RegionPanel RegionPanel1;
+        protected global::FineUI.Panel RegionPanel1;
         
         /// <summary>
-        /// Region1 控件。
+        /// leftPanel 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Region Region1;
-        
-        /// <summary>
-        /// Region2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Region Region2;
+        protected global::FineUI.Panel leftPanel;
         
         /// <summary>
         /// TabStrip1 控件。
@@ -256,6 +247,33 @@ namespace Order {
         protected global::FineUI.Grid fanListView;
         
         /// <summary>
+        /// mainRegion 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Panel mainRegion;
+        
+        /// <summary>
+        /// ContentPanel1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.ContentPanel ContentPanel1;
+        
+        /// <summary>
+        /// Panel4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Panel Panel4;
+        
+        /// <summary>
         /// fanProp 控件。
         /// </summary>
         /// <remarks>
@@ -263,14 +281,5 @@ namespace Order {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.Grid fanProp;
-        
-        /// <summary>
-        /// mainRegion 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Region mainRegion;
     }
 }

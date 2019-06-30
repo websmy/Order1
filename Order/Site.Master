@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Order.SiteMaster" %>
 
+<%@ Register Assembly="FineUI" Namespace="FineUI" TagPrefix="f" %>
+
 <!DOCTYPE html>
 
 <html lang="zh">
@@ -13,11 +15,11 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
+    <%--<webopt:bundlereference runat="server" path="~/MyCss/bootstrap.css" />--%>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
       <asp:ContentPlaceHolder ID="CssContent" runat="server">
       </asp:ContentPlaceHolder>
-
 </head>
 <body>
     <form runat="server">
@@ -53,9 +55,9 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                     <%--   <li><a runat="server" href="~/">主页</a></li>
+                        <li><a runat="server" href="~/">主页</a></li>
                         <li><a runat="server" href="~/About">关于</a></li>
-                        <li><a runat="server" href="~/Contact">联系方式</a></li>--%>
+                        <li><a runat="server" href="~/Contact">联系方式</a></li>
                         <li><a runat="server" href="~/Sel">风机选型</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled"  ID="loginview1">
@@ -80,9 +82,19 @@
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - 我的 ASP.NET 应用程序</p>
+
+                            <table class="bottomtable">
+                                <tr>
+<%--                                    <td style="width: 300px;">&nbsp;版本：<a target="_blank" href="http://fineui.com/version">v<asp:Literal runat="server" ID="litVersion"></asp:Literal></a>
+                                        &nbsp;&nbsp; <a target="_blank" href="http://wp.qq.com/wpa/qunwpa?idkey=5a98eb42b742a1edaf22826648d5f61bc16ed08e0253976bc8d30f97508c09c7">QQ公开群</a></td>
+                                    <td style="text-align: center;">Copyright &copy; 2008-2017 合肥三生石上软件有限公司</td>--%>
+                                    <td style=" text-align: center;">在线人数：<asp:Literal runat="server" ID="litOnlineUserCount"></asp:Literal>&nbsp;</td>
+                                </tr>
+                            </table>
+
+
+<%--                <p>&copy; <%: DateTime.Now.Year %> - creditfan &nbsp;<span id="online"></span>  </p> &nbsp;&nbsp;<f:Label ID="Label1" runat="server" Label="在线人数：" Text="Label"></f:Label>--%>
             </footer>
         </div>
     </form>

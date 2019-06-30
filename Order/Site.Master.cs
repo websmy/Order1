@@ -69,7 +69,8 @@ namespace Order
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //litVersion.Text = FineUI.GlobalConfig.ProductVersion;
+            litOnlineUserCount.Text = Application["OnlineUserCount"].ToString();
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

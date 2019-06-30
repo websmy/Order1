@@ -16,6 +16,24 @@
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server"></f:PageManager>
         <div id="main" style="width: 700px; height: 500px;"></div>
+
+        <f:Panel runat="server" ID="Panel2" ShowBorder="false" ShowHeader="false" AutoScroll="true">
+            <Items>
+
+                <f:Grid ID="fanProp" Title="风机属性" ShowBorder="true" ShowHeader="true" Margin="10 0 0 0 " Height="300px" AutoScroll="true"
+                    runat="server" DataKeyNames="FanID" AllowPaging="false"
+                    EnableMultiSelect="false">
+                    <Columns>
+                        <f:RowNumberField />
+
+                        <f:BoundField DataField="key" DataFormatString="{0}" HeaderText="属性"   Width="300px"   />
+                        <f:BoundField DataField="value" DataFormatString="{0}" HeaderText="值" Width="300px"  />
+
+                    </Columns>
+                </f:Grid>
+            </Items>
+        </f:Panel>
+
     </form>
 
 

@@ -9,21 +9,20 @@ using System.Web.UI.WebControls;
 
 namespace Order
 {
-    public partial class Sel : System.Web.UI.Page
+    public partial class Sel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
-                PrepareClass.PrepareData();
+                PrepareClass.PrepareData();             
             }
         }
 
         protected void Button3_Click(object sender, EventArgs e) 
         {
             this.fanListView.DataSource = null;
-            this.fanProp.DataSource = null;
-            this.fanProp.DataBind();
+          
             this.fanListView.DataBind();
 
             double air = Convert.ToDouble(this.txtAirFlow.Text) / Convert.ToDouble(MeasureClass.GetSiValue(this.comboBox1.SelectedValue));
@@ -164,6 +163,7 @@ namespace Order
             string a = keys[0].ToString();
             FanClass fanClass = QueryClass.Fanlist[a];
 
+
             DataTable table = new DataTable();
             table.Columns.Add(new DataColumn("key", typeof(String)));
             table.Columns.Add(new DataColumn("value", typeof(String)));
@@ -191,7 +191,9 @@ namespace Order
 
             //}
 
-            PageContext.RegisterStartupScript("$('#" + mainRegion.ClientID + "').find('iframe').attr('src','" + "./EChart.aspx?fanid=" + fanClass.FanID + "&p1=" + txtAirFlow.Text + "&p2=" + txtStaticPres.Text + "  ');");
+            //PageContext.RegisterStartupScript("$('#" + mainRegion.ClientID + "').find('iframe').attr('src','" + "./EChart.aspx?fanid=" + fanClass.FanID + "&p1=" + txtAirFlow.Text + "&p2=" + txtStaticPres.Text + "  ');");
+
+            PageContext.RegisterStartupScript("bindCalendar('" + fanClass.FanID + "','" + txtAirFlow.Text + "','" + txtStaticPres.Text + "');");
 
 
             //PageContext.RegisterStartupScript("$('#" + mainRegion.ClientID + "').find('iframe').attr('src','" + "./CalendarFrame.aspx?userid=" + 1 + "');");

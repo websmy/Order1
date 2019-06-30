@@ -10,42 +10,51 @@
 namespace Order {
     
     
-    public partial class EChart {
+    public partial class WebForm2 {
         
         /// <summary>
-        /// form1 控件。
+        /// PageManager2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::FineUI.PageManager PageManager2;
         
         /// <summary>
-        /// PageManager1 控件。
+        /// RegionPanel1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.PageManager PageManager1;
+        protected global::FineUI.RegionPanel RegionPanel1;
         
         /// <summary>
-        /// Panel2 控件。
+        /// Region2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Panel Panel2;
+        protected global::FineUI.Region Region2;
         
         /// <summary>
-        /// fanProp 控件。
+        /// treeMenu 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Grid fanProp;
+        protected global::FineUI.Tree treeMenu;
+        
+        /// <summary>
+        /// Region1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Region Region1;
     }
 }
