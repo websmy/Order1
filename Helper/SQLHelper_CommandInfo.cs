@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
 using System.Web;
+using System.Configuration;
 
 namespace Helper
 {
@@ -94,7 +95,8 @@ namespace Helper
                 //{
                 vDataBaseServer = vDataBaseServer;
                 //}
-                _connectionString = "Data Source=" + vDataBaseServer + ";Initial Catalog=" + vDataBaseName + ";User ID=" + vDataBaseUser + ";Password=" + vDataBasePass + "";
+                //_connectionString = "Data Source=" + vDataBaseServer + ";Initial Catalog=" + vDataBaseName + ";User ID=" + vDataBaseUser + ";Password=" + vDataBasePass + "";
+                _connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString; ;
                 return _connectionString;
 
             }

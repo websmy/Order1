@@ -77,14 +77,7 @@
                                             </f:GroupPanel>
 
 
-                                            <f:GroupPanel ID="GroupPanel3" runat="server" EnableCollapse="false" Title="风压误差设置" Layout="Column">
-                                                <Items>
-                                                    <f:NumberBox ShowLabel="false" ID="nbxStart" Text="0.5" Required="true" ShowRedStar="true" runat="server" MinValue="0" MaxValue="1" Width="80" />
-                                                    <f:Label ID="Label1" runat="server" ShowLabel="false" Text="~" Margin="0 10 0 10"></f:Label>
-                                                    <f:NumberBox ShowLabel="false" ID="nbxEnd" Text="1.5" Required="true" ShowRedStar="true" runat="server" MinValue="1" MaxValue="10" Width="80" />
-
-                                                </Items>
-                                            </f:GroupPanel>
+                                          
 
 
                                             <f:GroupPanel ID="GroupPanel4" runat="server" EnableCollapse="false" Title="进口空气密度" Layout="Column">
@@ -104,6 +97,36 @@
                                                     <f:Label ID="Label2" runat="server" ShowLabel="false" Text="Hz" Margin="0 10 0 10"></f:Label>
                                                 </Items>
                                             </f:Panel>
+
+                                            <f:Panel ID="Panel2" runat="server" ShowBorder="false" BodyPadding="5px" Layout="Column">
+                                                <Items>
+                                                    <f:NumberBox ID="NumberBox2" runat="server" Label="风机直径"   LabelWidth="80" Width="200" MinValue="0" ></f:NumberBox>
+
+                                                     <f:DropDownList ID="DUnit" runat="server"  Width="70">
+                                                        <f:ListItem Text="mm" Value="60" Selected="true" />
+                                                    </f:DropDownList>
+
+
+                                                </Items>
+                                            </f:Panel>
+
+                                             <f:Panel ID="Panel5" runat="server" ShowBorder="false" BodyPadding="5px" Layout="Column">
+                                                <Items>
+                                                    <f:NumberBox ID="NumberBox1" runat="server" Label="风机转速"   LabelWidth="80"  Width="200" MinValue="0" ></f:NumberBox>
+                                                     <f:DropDownList ID="DropDownList1" runat="server"  Width="70">
+                                                        <f:ListItem Text="rpm" Value="60" Selected="true" />
+                                                    </f:DropDownList>
+                                                </Items>
+                                            </f:Panel>
+
+                                              <f:GroupPanel ID="GroupPanel3" runat="server" EnableCollapse="false" Title="误差设置" Layout="Column">
+                                                <Items>
+                                                    <f:NumberBox ShowLabel="false" ID="nbxStart" Text="0.5" Required="true" ShowRedStar="true" runat="server" MinValue="0" MaxValue="1" Width="80" />
+                                                    <f:Label ID="Label1" runat="server" ShowLabel="false" Text="~" Margin="0 10 0 10"></f:Label>
+                                                    <f:NumberBox ShowLabel="false" ID="nbxEnd" Text="1.5" Required="true" ShowRedStar="true" runat="server" MinValue="1" MaxValue="10" Width="80" />
+
+                                                </Items>
+                                            </f:GroupPanel>
 
                                             <f:Button ID="Button3" CssClass="bgbtn" ToolTip="开始进行选型" runat="server" OnClick="Button3_Click" ValidateForms="SimpleForm1" Text="开始选型" Size="Large"></f:Button>
 
