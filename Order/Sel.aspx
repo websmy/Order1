@@ -24,10 +24,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <f:PageManager ID="PageManager1" runat="server"></f:PageManager>
 
-    <f:Panel ID="RegionPanel1" Layout="Column" ShowBorder="true" runat="server"  >
+    <f:Panel ID="RegionPanel1" Layout="Column" ShowBorder="true" runat="server">
         <Items>
 
-            <f:Panel ID="leftPanel" ColumnWidth="25%" ShowHeader="true" ShowBorder="true" Title="风机选型" Margin="50 0 5 0" 
+            <f:Panel ID="leftPanel" ColumnWidth="28%" ShowHeader="true" ShowBorder="true" Title="风机选型" Margin="50 0 5 0"
                 runat="server">
 
                 <Items>
@@ -39,7 +39,7 @@
                                 runat="server">
                                 <Items>
                                     <f:SimpleForm ID="SimpleForm1" ShowBorder="false"
-                                        ShowHeader="false" Title="输入选型条件" LabelWidth="120px" runat="server" AutoScroll="true">
+                                        ShowHeader="false" Title="输入选型条件" LabelWidth="80px" runat="server" AutoScroll="true">
                                         <Items>
 
                                             <f:GroupPanel ID="GroupPanel1" runat="server" EnableCollapse="false" Title="风量信息">
@@ -62,8 +62,8 @@
                                                         <f:RadioItem Text="静压" Value="jingya" Selected="true" />
                                                         <f:RadioItem Text="全压" Value="quanya" />
                                                     </f:RadioButtonList>
-                                                    <f:NumberBox Label="压力大小" LabelWidth="80px" ID="txtStaticPres" Required="true" ShowRedStar="true" Text="230" runat="server" />
-                                                    <f:DropDownList ID="comboBox2" runat="server" Label="压力单位" LabelWidth="80px">
+                                                    <f:NumberBox Label="压力大小"  ID="txtStaticPres" Required="true" ShowRedStar="true" Text="230" runat="server" />
+                                                    <f:DropDownList ID="comboBox2" runat="server" Label="压力单位" >
                                                         <f:ListItem Text="Pa" Value="Pa" Selected="true" />
                                                         <f:ListItem Text="mm Hg" Value="mm Hg" />
                                                         <f:ListItem Text="mm H20" Value="mm H20" />
@@ -77,32 +77,32 @@
                                             </f:GroupPanel>
 
 
-                                          
+
 
 
                                             <f:GroupPanel ID="GroupPanel4" runat="server" EnableCollapse="false" Title="进口空气密度" Layout="Column">
                                                 <Items>
                                                     <f:NumberBox ShowLabel="false" ID="txtInletAirDens" Text="1.2" Required="true" ShowRedStar="true" MinValue="0" MaxValue="10" runat="server" Width="80" />
                                                     <f:Label ID="Label4" runat="server" ShowLabel="false" Text="kg/m³" Margin="0 10 0 10"></f:Label>
-                                                    <f:Button ID="Button2" runat="server" Text="计算"></f:Button>
+                                                    <f:Button ID="Button2" runat="server" Text="计算" OnClick="Button2_Click"></f:Button>
                                                 </Items>
                                             </f:GroupPanel>
 
 
-                                            <f:Panel ID="Panel1" runat="server" ShowBorder="true" BodyPadding="5px" Layout="Column">
+                                           <%-- <f:Panel ID="Panel1" runat="server" ShowBorder="true" BodyPadding="5px" Layout="Column">
                                                 <Items>
                                                     <f:DropDownList ID="comboBoxPL" runat="server" Label="频率" Required="true" ShowRedStar="true" LabelWidth="50px" Width="120px">
                                                         <f:ListItem Text="60" Value="60" Selected="true" />
                                                     </f:DropDownList>
                                                     <f:Label ID="Label2" runat="server" ShowLabel="false" Text="Hz" Margin="0 10 0 10"></f:Label>
                                                 </Items>
-                                            </f:Panel>
+                                            </f:Panel>--%>
 
                                             <f:Panel ID="Panel2" runat="server" ShowBorder="false" BodyPadding="5px" Layout="Column">
                                                 <Items>
-                                                    <f:NumberBox ID="NumberBox2" runat="server" Label="风机直径"   LabelWidth="80" Width="200" MinValue="0" ></f:NumberBox>
+                                                    <f:NumberBox ID="Diameter" runat="server" Label="风机直径"   Text="2134"  Width="200" MinValue="0"></f:NumberBox>
 
-                                                     <f:DropDownList ID="DUnit" runat="server"  Width="70">
+                                                    <f:DropDownList ID="DUnit" runat="server" Width="70">
                                                         <f:ListItem Text="mm" Value="60" Selected="true" />
                                                     </f:DropDownList>
 
@@ -110,16 +110,19 @@
                                                 </Items>
                                             </f:Panel>
 
-                                             <f:Panel ID="Panel5" runat="server" ShowBorder="false" BodyPadding="5px" Layout="Column">
+                                            <f:Panel ID="Panel5" runat="server" ShowBorder="false" BodyPadding="5px" Layout="Column">
                                                 <Items>
-                                                    <f:NumberBox ID="NumberBox1" runat="server" Label="风机转速"   LabelWidth="80"  Width="200" MinValue="0" ></f:NumberBox>
-                                                     <f:DropDownList ID="DropDownList1" runat="server"  Width="70">
+                                                    <f:NumberBox ID="RPM" runat="server" Label="风机转速"  Width="200"  Text="550" MinValue="0"></f:NumberBox>
+                                                    <f:DropDownList ID="DropDownList1" runat="server" Width="70">
                                                         <f:ListItem Text="rpm" Value="60" Selected="true" />
                                                     </f:DropDownList>
                                                 </Items>
                                             </f:Panel>
 
-                                              <f:GroupPanel ID="GroupPanel3" runat="server" EnableCollapse="false" Title="误差设置" Layout="Column">
+
+
+
+                                            <f:GroupPanel ID="GroupPanel3" runat="server" EnableCollapse="false" Title="误差设置" Layout="Column">
                                                 <Items>
                                                     <f:NumberBox ShowLabel="false" ID="nbxStart" Text="0.5" Required="true" ShowRedStar="true" runat="server" MinValue="0" MaxValue="1" Width="80" />
                                                     <f:Label ID="Label1" runat="server" ShowLabel="false" Text="~" Margin="0 10 0 10"></f:Label>
@@ -128,11 +131,165 @@
                                                 </Items>
                                             </f:GroupPanel>
 
+
+                                             <f:GroupPanel ID="GroupPanel5" runat="server" EnableCollapse="false" Title="接口尺寸"   >
+                                                <Items>
+                                                    <f:NumberBox ID="轴伸" runat="server"   Label="轴伸L(mm)"  Text="106" MinValue="0"   ></f:NumberBox>
+                                                    <f:NumberBox ID="大径" runat="server"   Label="大径d(mm)"  Text="65" MinValue="0"   ></f:NumberBox>
+
+                                                    <f:TextBox ID="锥度" runat="server" Label="锥度" Text="1:20"></f:TextBox>
+
+                                                    <f:NumberBox ID="键宽" runat="server"   Label="键宽d(mm)" Text="18"  MinValue="0"  ></f:NumberBox>
+                                                 <f:Button ID="Button1" runat="server" Text="显示接口示意图" OnClick="Button1_Click"></f:Button>
+                                                    <f:CheckBox ID="我不知道接口尺寸" runat="server" Label="" Text="我不知道接口尺寸"  AutoPostBack="true"  OnCheckedChanged="我不知道接口尺寸_CheckedChanged"></f:CheckBox>
+                                                </Items>
+                                            </f:GroupPanel>
+
+                                            <f:Panel ID="Panel1" runat="server" ShowBorder="false" BodyPadding="5px" Layout="Column">
+                                                <Items>
+                                                    <f:DropDownList ID="前吹后吹" runat="server"  AutoSelectFirstItem="false"  Label="前吹/后吹"    Required="true"  ShowRedStar="true"  >
+                                                        <f:ListItem Text="前吹" Value="前吹"/>
+                                                        <f:ListItem Text="后吹" Value="后吹"/>
+                                                    </f:DropDownList>
+                                            <f:Button ID="Button4" runat="server" Text="显示前吹/后吹示意图" OnClick="Button4_Click"></f:Button>
+
+                                                </Items>
+                                            </f:Panel>
+
+                                             <f:Panel ID="Panel9" runat="server" ShowBorder="false" BodyPadding="5px" Layout="Column">
+                                                <Items>
+                                                    <f:DropDownList ID="鼓风引风" runat="server"  AutoSelectFirstItem="false"  Label="鼓风/引风"    Required="true"  ShowRedStar="true"  >
+                                                        <f:ListItem Text="鼓风" Value="鼓风" />
+                                                        <f:ListItem Text="引风" Value="引风" />
+                                                    </f:DropDownList>
+                                                    <f:Label ID="Label2" runat="server"  Text="鼓风：叶轮带动气流吹向客户端设备进行通风制冷；引风：叶轮带动气流从客户端设备抽风进行通风制冷；"></f:Label>
+                                                </Items>
+                                            </f:Panel>
+
+
+                                             <f:GroupPanel ID="GroupPanel6" runat="server" EnableCollapse="false" Layout="Column" Title="叶片材质要求"   >
+                                                <Items>
+                                                    <f:CheckBox ID="ALU" runat="server" Label="" Text="ALU"  ></f:CheckBox>
+                                                    <f:CheckBox ID="FRP" runat="server" Label="" Text="FRP"  ></f:CheckBox>
+                                                    <f:CheckBox ID="PAG" runat="server" Label="" Text="PAG"  ></f:CheckBox>
+                                                    <f:CheckBox ID="是否其它材质" runat="server" Label="" Text="其它" AutoPostBack="true" OnCheckedChanged="是否其它材质_CheckedChanged"></f:CheckBox>
+                                                </Items>
+                                                 
+                                                 <Items>
+                                                     <f:TextBox ID="其它材质" runat="server"   Label="其它材质" Text="" Enabled="false" ></f:TextBox>
+                                                 </Items>
+                                            </f:GroupPanel>
+
+                                               <f:GroupPanel ID="GroupPanel7" runat="server" EnableCollapse="false" Title="储存温度范围（℃）" Layout="Column">
+                                                <Items>
+                                                    <f:NumberBox ShowLabel="false" ID="储存温度min" Text="-20"  runat="server"  Width="80" />
+                                                    <f:Label ID="Label3" runat="server" ShowLabel="false" Text="~" Margin="0 10 0 10"></f:Label>
+                                                    <f:NumberBox ShowLabel="false" ID="储存温度max" Text="60" runat="server"  Width="80" />
+
+                                                </Items>
+                                            </f:GroupPanel>
+
+                                              <f:Panel ID="Panel11" runat="server" ShowBorder="false" BodyPadding="5px">
+                                                <Items>
+
+                                                    <f:DropDownList ID="防腐要求" runat="server"   Label="防腐要求" >
+                                                        <f:ListItem Text="C3" Value="C3" Selected="true" />
+                                                        <f:ListItem Text="C4" Value="C4" />
+                                                        <f:ListItem Text="C5" Value="C5"  />
+                                                    </f:DropDownList>
+
+                                                </Items>
+                                            </f:Panel>
+
+                                              <f:Panel ID="Panel12" runat="server" ShowBorder="false" BodyPadding="5px">
+                                                <Items>
+
+                                                    <f:TextArea ID="备注项"  EmptyText="特殊要求：比如采用焊接铝堵头、采用球铁轮毂、采用4个叶片、叶片不切角处理；" runat="server" Height="50px" Label="备注项" Text=""></f:TextArea>
+                                                </Items>
+                                            </f:Panel>
+
+
+
+
+
+
+
+
                                             <f:Button ID="Button3" CssClass="bgbtn" ToolTip="开始进行选型" runat="server" OnClick="Button3_Click" ValidateForms="SimpleForm1" Text="开始选型" Size="Large"></f:Button>
 
 
                                         </Items>
                                     </f:SimpleForm>
+
+
+                                    <f:Window ID="Window1" Title="计算" runat="server"
+                                        Target="Parent" Hidden="true"
+                                        IsModal="True" Width="400px" Height="200px">
+
+                                        <Items>
+                                            <f:SimpleForm ID="SimpleForm2" runat="server" ShowBorder="false" BodyPadding="10px"
+                                                ShowHeader="false" LabelAlign="Right">
+                                                <Items>
+                                                    <f:Panel ID="Panel6" runat="server" ShowBorder="false" BodyPadding="5px" Layout="Column">
+                                                        <Items>
+                                                            <f:NumberBox ID="txtAirTemper" runat="server" Label="温度" LabelWidth="110" Width="250" MinValue="0" Required="true" ShowRedStar="true"></f:NumberBox>
+                                                            <f:DropDownList ID="cbAirTemper" runat="server" Width="70" >
+                                                                <f:ListItem Text="℃" Value="0" Selected="true" />
+                                                                <f:ListItem Text="℉" Value="1" Selected="true" />
+                                                            </f:DropDownList>
+                                                        </Items>
+                                                    </f:Panel>
+
+                                                    <f:Panel ID="Panel7" runat="server" ShowBorder="false" BodyPadding="5px" Layout="Column">
+                                                        <Items>
+                                                            <f:NumberBox ID="txtSiteElevat" runat="server" Label="海拔" LabelWidth="110" Width="250" MinValue="0" Required="true" ShowRedStar="true" ></f:NumberBox>
+                                                            <f:DropDownList ID="cbSiteEleva" runat="server" Width="70">
+                                                                <f:ListItem Text="m" Value="0" Selected="true" />
+                                                                <f:ListItem Text="ft" Value="1" Selected="true" />
+                                                            </f:DropDownList>
+                                                        </Items>
+                                                    </f:Panel>
+
+                                                    <f:Panel ID="Panel8" runat="server" ShowBorder="false" BodyPadding="5px" Layout="Column">
+                                                        <Items>
+                                                            <f:NumberBox ID="txtAirHumi" runat="server" Label="进口空气湿度" EmptyText="0-100%" MinValue="0" MaxValue="100" LabelWidth="110" Width="250"  Required="true" ShowRedStar="true"></f:NumberBox>
+                                                        </Items>
+                                                    </f:Panel>
+
+
+                                                    <f:Panel ID="Panel10" runat="server" ShowBorder="false"  BodyPadding="5px" Layout="Column">
+                                                        <Items>
+                                                            <f:Button ID="btnCalc" runat="server" OnClick="btnCalc_Click" Text="计算" ValidateForms="SimpleForm2" Margin="0 30 0 120 "></f:Button>
+                                                            <f:Button ID="btnCalcel" runat="server" Text="取消"></f:Button>
+                                                        </Items>
+                                                    </f:Panel>
+
+
+
+
+
+                                                </Items>
+                                            </f:SimpleForm>
+                                        </Items>
+
+                                    </f:Window>
+
+
+
+                                     <f:Window ID="Window2" Title="接口图" runat="server"  IsModal="false" Hidden="true">
+                                        <Items>
+                                            <f:Image ID="Image1" runat="server" ImageUrl="./img/jiekou.png" Label="接口尺寸示意图"></f:Image>
+                                        </Items>
+                                    </f:Window>
+
+                                     <f:Window ID="Window3" Title="前吹后吹示意图" runat="server"  IsModal="false" Hidden="true">
+                                        <Items>
+                                            <f:Image ID="Image3" runat="server" ImageUrl="./img/qian.jpg" Label="前吹示意图"></f:Image>
+                                            <f:Image ID="Image2" runat="server" ImageUrl="./img/hou.jpg" Label="后吹示意图"></f:Image>
+                                        </Items>
+                                    </f:Window>
+
+
                                 </Items>
                             </f:Tab>
                             <f:Tab Title="<span class='highlight'>选型结果</span>" BodyPadding="0px"
@@ -175,7 +332,7 @@
 
             </f:Panel>
 
-            <f:Panel ID="mainRegion" ShowHeader="true" ColumnWidth="75%" Title="风机信息" ShowBorder="true" Margin="50 0 0 5"
+            <f:Panel ID="mainRegion" ShowHeader="true" ColumnWidth="72%" Title="风机信息" ShowBorder="true" Margin="50 0 0 5"
                 runat="server">
 
                 <Items>
@@ -185,19 +342,37 @@
 
 
                     <f:Panel ID="Panel4" runat="server" BodyPadding="0px" ShowBorder="false" ShowHeader="false" Title="Panel">
-                        <Items>
-                            <f:Grid ID="fanProp" Title="风机属性" ShowBorder="true" ShowHeader="true" Margin="10 0 0 0 "
+
+                         <Items>
+                            <f:Grid ID="Grid1" Title="风机结构属性对比（属性不一致的需要跟本公司确认）" ShowBorder="true" ShowHeader="true" Margin="10 0 0 0 "
                                 runat="server" DataKeyNames="FanID" AllowPaging="false"
                                 EnableMultiSelect="false">
                                 <Columns>
                                     <f:RowNumberField />
 
-                                    <f:BoundField DataField="key" DataFormatString="{0}" Width="150px"  HeaderText="属性" />
+                                    <f:BoundField DataField="key" DataFormatString="{0}" Width="150px" HeaderText="属性" />
+                                    <f:BoundField DataField="val1" DataFormatString="{0}" Width="150px" HeaderText="输入值" />
+                                    <f:BoundField DataField="val2" DataFormatString="{0}" Width="150px" HeaderText="实际值" />
+                                    <f:BoundField DataField="issame" DataFormatString="{0}" Width="150px" HeaderText="对比" />
+
+                                </Columns>
+                            </f:Grid>
+                        </Items>
+
+                        <Items>
+                            <f:Grid ID="fanProp" Title="该风机详细属性" ShowBorder="true" ShowHeader="true" Margin="10 0 0 0 "
+                                runat="server" DataKeyNames="FanID" AllowPaging="false"
+                                EnableMultiSelect="false">
+                                <Columns>
+                                    <f:RowNumberField />
+
+                                    <f:BoundField DataField="key" DataFormatString="{0}" Width="150px" HeaderText="属性" />
                                     <f:BoundField DataField="value" DataFormatString="{0}" Width="150px" HeaderText="值" />
 
                                 </Columns>
                             </f:Grid>
                         </Items>
+
                     </f:Panel>
                 </Items>
             </f:Panel>
@@ -205,6 +380,7 @@
 
         </Items>
     </f:Panel>
+
 
 
     <script>

@@ -38,6 +38,29 @@ namespace Order
         public static Dictionary<string, FanClass> SelectedFan = new Dictionary<string, FanClass>();
         public static string SelectLx = "S";
 
+        public static double Diameter = 0;
+        public static double RPM = 0;
+
+
+
+        public static string 轮毂高度 { get; set; }
+        public static string 轴孔大径 { get; set; }
+        public static string 锥度 { get; set; }
+        public static string 键宽 { get; set; }
+        public static string 轴伸L { get; set; }
+        public static string 叶片材质 { get; set; }
+        public static Boolean 是否其它材质 { get; set; }
+        public static string 其它材质 { get; set; }
+        public static string 前吹后吹 { get; set; }
+        public static string 鼓风引风 { get; set; }
+        public static string 储存温度min { get; set; }
+        public static string 储存温度max { get; set; }
+        public static string 防腐要求 { get; set; }
+        public static string 备注项 { get; set; }
+        public static Boolean 我不知道接口尺寸 { get; set; }
+
+        
+
         protected static bool isNumberic(string message)
         {
             //判断是否为整数字符串 
@@ -111,9 +134,14 @@ namespace Order
 
         private static bool CheckDiameter(FanClass fam)
         {
-            return (AllDiameter || (fam.Diameter == DiameterCompare));
+            //return (AllDiameter || (fam.Diameter == DiameterCompare));
+            return (Diameter * MinTolerance <= fam.Diameter && fam.Diameter <= Diameter * MaxTolerance);
         }
-
+        private static bool CheckRPM(FanClass fam)
+        {
+            //return (AllDiameter || (fam.Diameter == DiameterCompare));
+            return (RPM * MinTolerance <= fam.RPM && fam.RPM <= RPM * MaxTolerance);
+        }
         private static bool CheckDianJiJiShu(FanClass fam)
         {
             return (AllDianJiJiShu || (fam.DianJiJiShu == DianJiJiShuCompare));
@@ -273,10 +301,48 @@ namespace Order
 
                     }
 
-                    //if (!CheckDianYuanPinLu(fanClass))
+                    if (!我不知道接口尺寸)
+                    {
+                        if (!轴孔大径.Equals(fanClass.轴孔大径))
+                        {
+                            continue;
+                        }
+                        if (!锥度.Equals(fanClass.锥度))
+                        {
+                            continue;
+                        }
+                        if (!键宽.Equals(fanClass.键宽))
+                        {
+                            continue;
+                        }
+
+                        if (!((Convert.ToInt32(轴伸L) + 2) <= (Convert.ToInt32(fanClass.轮毂高度)) &&
+                            (Convert.ToInt32(fanClass.轮毂高度)) <= (Convert.ToInt32(轴伸L) + 6)))
+                        {
+                            continue;
+                        }
+                    }
+
+
+                    //if (!前吹后吹.Equals(fanClass.前吹后吹))
                     //{
                     //    continue;
                     //}
+                    //if (!鼓风引风.Equals(fanClass.鼓风引风))
+                    //{
+                    //    continue;
+                    //}
+
+
+                    if (!CheckDiameter(fanClass))
+                    {
+                        continue;
+                    }
+
+                    if (!CheckRPM(fanClass))
+                    {
+                        continue;
+                    }
                     //if (!CheckDianYa(fanClass))
                     //{
                     //    continue;

@@ -49,6 +49,18 @@ namespace Order
         public string F39 = "";
         public string F40 = "";
 
+        public string 轮毂高度 { get; set; }
+        public string 轴孔大径 { get; set; }
+        public string 锥度 { get; set; }
+        public string 键宽 { get; set; }
+        public string 轴伸L { get; set; }
+        public string 叶片材质 { get; set; }
+        public string 前吹后吹 { get; set; }
+        public string 鼓风引风 { get; set; }
+        public string 储存温度min { get; set; }
+        public string 储存温度max { get; set; }
+        public string 防腐要求 { get; set; }
+
 
 
         private string _description = "";

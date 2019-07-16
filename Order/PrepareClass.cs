@@ -89,6 +89,19 @@ namespace Order
                         F39 = row["F39"].ToString(),
                         F40 = row["F40"].ToString(),
 
+                        轮毂高度 = row["轮毂高度"].ToString(),
+                        轴孔大径 = row["轴孔大径"].ToString(),
+                        锥度 = row["锥度"].ToString(),
+                        键宽 = row["键宽"].ToString(),
+                        轴伸L = row["轴伸L"].ToString(),
+                        叶片材质 = row["叶片材质"].ToString(),
+                        前吹后吹 = row["前吹后吹"].ToString(),
+                        鼓风引风 = row["鼓风引风"].ToString(),
+                        储存温度min = row["储存温度min"].ToString(),
+                        储存温度max = row["储存温度max"].ToString(),
+                        防腐要求 = row["防腐要求"].ToString(),
+
+
 
                         //YeXing = row["叶型"].ToString(),
                         //FengXiang = row["换气方向"].ToString(),

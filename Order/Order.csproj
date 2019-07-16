@@ -193,6 +193,10 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
+    <Content Include="img\hou.jpg" />
+    <Content Include="img\hou.png" />
+    <Content Include="img\jiekou.png" />
+    <Content Include="img\qian.jpg" />
     <Content Include="libman.json" />
     <Content Include="config\conn.config" />
     <Content Include="config\quanxian.config" />
@@ -363,6 +367,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Class\Conversion.cs" />
     <Compile Include="Class\PageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
